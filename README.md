@@ -19,7 +19,8 @@
 - canvas  
        &emsp; - canvas动画边界.md 
        &emsp; - 1.drawImage.jpg  
-       &emsp; - 2.getImageData.jpg 
+       &emsp; - 2.getImageData.jpg   
+       &emsp; - canvas交互——div和isPointInPath().md
 
 ### 说明：
 爬虫的之前都在简书发过，不过现在要连微信发文章很麻烦
