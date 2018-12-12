@@ -7,7 +7,7 @@
 
 - node  
   &emsp; - 爬取googlePlay ，Itunes Connect前后台思路（一）.md   
-  &emsp; - 爬取googlePlay ，Itunes Connect前后台思路（二）.md 
+  &emsp; - 爬取googlePlay ，Itunes Connect前后台思路（二）.md   
   &emsp; - 用nodejs爬取googlePlay前台内容.md   
   &emsp; - 用nodejs抓取Itunes前台内容.md   
   
@@ -22,5 +22,8 @@
        &emsp; - 2.getImageData.jpg     
        &emsp; - canvas交互——div和isPointInPath().md
 
+-vue  
+   &emsp; - 动态添加class方法.md  
+   &emsp; - 自定义指令.md   
 ### 说明：
 爬虫的之前都在简书发过，不过现在要连微信发文章很麻烦
