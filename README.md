@@ -4,6 +4,7 @@
 - javascript   
   &emsp; - 获取鼠标位置和手机触摸点位置.md   
   &emsp; - canvas相关公式总结.md   
+  &emsp; - ES6种的Map类型.md   
 
 - node  
   &emsp; - 爬取googlePlay ，Itunes Connect前后台思路（一）.md   
