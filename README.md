@@ -21,7 +21,8 @@
        &emsp; - canvas动画边界.md   
        &emsp; - 1.drawImage.jpg    
        &emsp; - 2.getImageData.jpg     
-       &emsp; - canvas交互——div和isPointInPath().md
+       &emsp; - canvas交互——div和isPointInPath().md   
+       &emsp; - 背景图片循环.md（图片循环，解决慕课FlappyBird小游戏地板循环跳动的问题）
 
 -vue  
    &emsp; - 动态添加class方法.md  
