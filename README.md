@@ -24,8 +24,13 @@
        &emsp; - canvas交互——div和isPointInPath().md   
        &emsp; - 背景图片循环.md（图片循环，解决慕课FlappyBird小游戏地板循环跳动的问题）
 
--vue  
+-vue   
    &emsp; - 动态添加class方法.md  
    &emsp; - 自定义指令.md   
+   
+-小游戏  
+ &emsp; - 在浏览器中开发微信小游戏.md  
+ &emsp; - 精灵类的切换.md  
+ 
 ### 说明：
 爬虫的之前都在简书发过，不过现在要连微信发文章很麻烦
