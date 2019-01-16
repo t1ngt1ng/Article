@@ -28,7 +28,8 @@
 
 -vue   
    &emsp; - 动态添加class方法.md  
-   &emsp; - 自定义指令.md   
+   &emsp; - 自定义指令.md    
+   &emsp; - 在vue/nuxt.js项目中使用使用import.md
    
 -小游戏  
  &emsp; - 在浏览器中开发微信小游戏.md  
