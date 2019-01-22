@@ -7,6 +7,7 @@
   &emsp; - ES6种的Map类型.md   
   &emsp; - es6中的浅拷贝、深拷贝.md   
   &emsp; - js中几种时间戳的获取.md  
+  &emsp; - 将城市按照首字母分类.md 
 
 - node  
   &emsp; - 爬取googlePlay ，Itunes Connect前后台思路（一）.md   
