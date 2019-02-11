@@ -1,13 +1,13 @@
-#koa中使用passport 
+# koa中使用passport 
   
 passport可以实现用户注册检测，用户登录验证。支持本地账号验证和第三方账号登录验证
 
-##安装依赖
+## 安装依赖
 
 passport-local :必须安装  
 koa-passport   ：根据项目框架安装
 
-##使用
+## 使用
 
 使用策略验证用户登录
 ``` 
