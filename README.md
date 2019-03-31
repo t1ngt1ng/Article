@@ -21,8 +21,8 @@
     &emsp; - [关于css结构和层叠的习题.md](https://github.com/t1ngt1ng/Article/blob/master/css/%E5%85%B3%E4%BA%8Ecss%E7%BB%93%E6%9E%84%E5%92%8C%E5%B1%82%E5%8F%A0%E7%9A%84%E4%B9%A0%E9%A2%98.md)  
     &emsp; - [居中对齐的方式.md](https://github.com/t1ngt1ng/Article/blob/master/css/%E5%B1%85%E4%B8%AD%E5%AF%B9%E9%BD%90%E7%9A%84%E6%96%B9%E5%BC%8F.md)  
     &emsp; - [文字段落相关css.md](https://github.com/t1ngt1ng/Article/blob/master/css/%E6%96%87%E5%AD%97%E6%AE%B5%E8%90%BD%E7%9B%B8%E5%85%B3css.md)   
-    &emsp; - [icon图标.md]()  
-
+    &emsp; - [icon图标.md](https://github.com/t1ngt1ng/Article/blob/master/css/icon%E5%9B%BE%E6%A0%87.md)  
+    
 - canvas    
        &emsp; - [canvas动画边界.md](https://github.com/t1ngt1ng/Article/blob/master/canvas/canvas%E5%8A%A8%E7%94%BB%E8%BE%B9%E7%95%8C.md)  
        &emsp; - [1.drawImage.jpg](https://github.com/t1ngt1ng/Article/blob/master/canvas/1.drawImage.jpg)   
@@ -39,5 +39,8 @@
  &emsp; - [在浏览器中开发微信小游戏.md](https://github.com/t1ngt1ng/Article/blob/master/%E5%B0%8F%E6%B8%B8%E6%88%8F/%E5%9C%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E5%BC%80%E5%8F%91%E5%BE%AE%E4%BF%A1%E5%B0%8F%E6%B8%B8%E6%88%8F.md)      
  &emsp; - [精灵类的切换.md](https://github.com/t1ngt1ng/Article/blob/master/%E5%B0%8F%E6%B8%B8%E6%88%8F/%E7%B2%BE%E7%81%B5%E7%B1%BB%E7%9A%84%E5%88%87%E6%8D%A2.md)  
  
+- 小程序  
+  &emsp; - [小程序中视频播放相关总结 .md]()      
+
 ### 说明：
 爬虫和css有些之前都在简书发过，不过现在要连微信发文章很麻烦
