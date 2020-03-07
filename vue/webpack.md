@@ -46,7 +46,7 @@ npx webpack
 ```  
 npx webpack --config newname.js
 ```  
-###配置文件中属性名称  
+### 配置文件中属性名称  
 ```javascript 
 var path = require('path')
 module.exports = {
@@ -58,19 +58,87 @@ module.exports = {
     }
 }
 ```  
-### 注意
-- entry   
+
+## entry   
+打包入口文件，在不配置output的情况下，默认输出的文件为main.js.  
 ``` entry: './src/index.js'```是 
 ```   entry:{
         main:'./src/index.js'
-    } ``` 的简写形式 
-- mode  
+    } ``` 的简写形式  
+    entry可以生成多个文件
+    
+    ```
+    entry:{
+        main:'./src/index.js',
+        sub:'./src/index.js'
+    } 
+    ```  
+    如果生成多个文件时，output的filename为固定值会报错，此时可写成``` output: {filename:[name].js}``` 生成的两个文件分别为main.js和sub.js,更多filename的配置方法可参看https://www.webpackjs.com/configuration/output/
+## mode  
 mode有三个模式：none、production（默认）、development    
 其中production压缩代码，development不压缩
-- output  
-path定义的文件夹一定要用绝对路径，所以引用nodejs的path模块获取绝对路径  
+## output  
+path定义的文件夹一定要用绝对路径，所以引用nodejs的path模块获取绝对路径 
+### filename 
+输出的文件名```filename: '[name].js'```
+### path
+输出路径``` path: path.resolve(__dirname, 'dist')```
+### publicPath
+给引入的js添加统一前缀```publicPath:'http://xxx.com'```
 
-## loader
+## devtool
+映射关系，main.js与原文件中某文件某行的对应关系   
+
+- none 无映射
+- source-map:打包过程比较慢，打包后会出现main.js.map的映射文件
+- inline-source-map:会以base64形式引入main.js中，报错具体到某行某列
+- inline-cheap-source-map:会以base64形式引入main.js中，报错具体到某行，此模式不管第三方模块
+- cheap-module-source-map：会以base64形式引入main.js中，报错具体到某行，此模式管第三方模块
+- eval 打包方式最快，会在main.js中添加eval打印代码，代码复杂时打印不全面
+- cheap-module-eval-source-map:会在main.js中添加eval打印代码，报错具体到某行，此模式管第三方模块
+
+### 常用打包配置
+- production ：cheap-module-source-map
+- development：cheap-module-eval-source-map  
+
+具体查看文档：https://www.webpackjs.com/configuration/devtool/
+
+
+## devServer
+webpack中三种可以自动打包的方式
+### 1.webpack --watch
+在package.json中配置--watch，可以在文件修改的时候重新打包编译，但是不能刷新浏览器
+### 2.webpackDevServer
+``` 
+  devServer: {
+        contentBase: "./dist",//启动服务器的根目录
+        open: true,//是否自动打开浏览器
+    }
+``` 
+为项目启一个服务器，修改时自动打包文件，自动刷新浏览器。还可以配置poxy，port等项目。具体查看文档：https://www.webpackjs.com/configuration/dev-server/
+### 3.node server.js
+老版本webpack的devServer不完善，需要自己写node文件来启动  
+可以使用express或koa框架，同时安装webpak-dev-middlewave
+简单的启动
+
+```
+var express = require('express')
+const webpack = require('webpack')
+const webpackDevMiddleWare = require('webpack-dev-middleware')
+const config = require('./webpack.config.js')
+const complier = webpack(config) //编译用
+
+const app = express()
+app.use(webpackDevMiddleWare(complier, {
+    publicPath: config.output.publicPath
+}))
+
+app.listen(3000, () => {
+    console.log('server is running')
+})
+```
+
+## module中的loader
 loader的加载顺序，从下到上，从右到左
 
 ### 图片 file-loader  
@@ -144,7 +212,7 @@ module.exports = {
 }
 ```
 
-## plugin
+## plugins
 可以在webpack打包的某个节点上做某些事情
 
 ### htm-webpack-plugin
