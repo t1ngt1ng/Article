@@ -105,18 +105,19 @@ path定义的文件夹一定要用绝对路径，所以引用nodejs的path模块
 
 
 ## devServer
-webpack中三种可以自动打包的方式
-### 1.webpack --watch
+### webpack中三种可以自动打包的方式
+- 1.webpack --watch
 在package.json中配置--watch，可以在文件修改的时候重新打包编译，但是不能刷新浏览器
-### 2.webpackDevServer
+- 2.webpackDevServer
 ``` 
   devServer: {
         contentBase: "./dist",//启动服务器的根目录
         open: true,//是否自动打开浏览器
     }
 ``` 
-为项目启一个服务器，修改时自动打包文件，自动刷新浏览器。还可以配置poxy，port等项目。具体查看文档：https://www.webpackjs.com/configuration/dev-server/
-### 3.node server.js
+为项目启一个服务器，修改时自动打包文件，自动刷新浏览器。还可以配置poxy，port等项目。打包的结果不会生成dist文件，会存在内存中。  
+具体查看文档：https://www.webpackjs.com/configuration/dev-server/
+- 3.node server.js
 老版本webpack的devServer不完善，需要自己写node文件来启动  
 可以使用express或koa框架，同时安装webpak-dev-middlewave
 简单的启动
@@ -136,6 +137,19 @@ app.use(webpackDevMiddleWare(complier, {
 app.listen(3000, () => {
     console.log('server is running')
 })
+```
+### HotModuleReplacement(HMR)
+可以在不刷新页面的情况下，显示更改的样式。还可以有js时只重新载入有修改的文件。
+
+``` 
+ devServer: {
+        hot: true,//开启HMR功能
+        hotOnly: true//即使没生效也不让浏览器自动刷新
+    }
+    
+//在plugin中配置，因为是webpack自带，配置如下
+const webpack=require('webpack')
+plugins: [ new webpack.HotModuleReplacementPlugin() ],
 ```
 
 ## module中的loader
@@ -210,6 +224,52 @@ module.exports = {
          loader: 'file-loader'
         }
 }
+```
+
+### babel
+内容参看https://www.babeljs.cn/setup#webpack 内容
+
+```
+npm install --save-dev babel-loader @babel/core
+npm install @babel/preset-env --save-dev
+{
+  "presets": ["@babel/preset-env"]
+}
+``` 
+babel-loader只是建立了babel和webpack的桥梁，并不会吧es6转换成es5
+preset-env会实现转换，如果要实现低版本语法的转化，还要安装polyfill
+
+```
+npm install --save @babel/polyfill
+``` 
+在页面```import "@babel/polyfill"```后再打包时会打入很多没有引用到的东西，此时可在preset-env中加“useBuiltIns”配置项解决
+
+```
+ presets: [
+     ['@babel/preset-env', {
+         useBuiltIns: 'usage',
+         corejs: 3
+     }]
+ ]
+```  
+**注意**  
+此时1.要同时配置corejs版本，同时安装相应版本  2.不再需要再js中引用polyfill  ，否则会报错
+在业务代码中配置此项即可，如想在库项目中配置，要使用“transform-runtime”配置。
+
+transform-runtime方式，会以闭包形式打包代码，避免全局污染
+同时要安装corejs
+
+```
+npm install --save-dev @babel/plugin-transform-runtime
+npm install --save @babel/runtime
+npm install --save @babel/runtime-corejs
+
+ "plugins": [
+        ["@babel/plugin-transform-runtime", {
+            "absoluteRuntime": false,
+            "corejs": 3}
+        ]
+    ]
 ```
 
 ## plugins
