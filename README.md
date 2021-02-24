@@ -34,6 +34,10 @@
    &emsp; - [动态添加class方法.md](https://github.com/t1ngt1ng/Article/blob/master/vue/%E5%8A%A8%E6%80%81%E6%B7%BB%E5%8A%A0class%E6%96%B9%E6%B3%95.md)  
    &emsp; - [自定义指令.md](https://github.com/t1ngt1ng/Article/blob/master/vue/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8C%87%E4%BB%A4.md)   
    &emsp; - [在vue/nuxt.js项目中使用使用import.md](https://github.com/t1ngt1ng/Article/blob/master/vue/%E5%9C%A8vue%20nuxt.js%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BD%BF%E7%94%A8import.md)  
+    &emsp; - [vant超过两行...可展开]()
+    &emsp; - [vue跨页锚点]()
+    &emsp; - [下滑翻页]()
+
 - webpack  
   &emsp; - [webpack基础.md](https://github.com/t1ngt1ng/Article/blob/master/webpack/webpack%E5%9F%BA%E7%A1%80.md)      
  &emsp; - [webpack进阶.md](https://github.com/t1ngt1ng/Article/blob/master/webpack/webpack%E8%BF%9B%E9%98%B6.md)   
@@ -44,7 +48,11 @@
  
 - 小程序  
   &emsp; - [小程序中视频播放相关总结 .md]()      
-  &emsp; - [小程序中打开外部链接和关注公众号.md]()      
+  &emsp; - [小程序中打开外部链接和关注公众号.md]()  
+  &emsp; - [uniapp小程序使用总结.md]()   
+
+- 可视化  
+  &emsp; - [可视化问题总结.md]()  
 
 ### 说明：
 爬虫和css有些之前都在简书发过，不过现在要连微信发文章很麻烦
